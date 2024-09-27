@@ -8,5 +8,5 @@ def connect_reddit(client_id, client_secret, user_agent) -> Reddit:
         print("connectd to reddit")
         return reddit
     except Exception as e:
-        print(s)
+        print(e)
         sys.exit(1)
