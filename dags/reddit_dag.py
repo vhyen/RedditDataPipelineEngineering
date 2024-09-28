@@ -5,6 +5,9 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.pardir.dirname(os.path.abspath(__file__))))
 
+from pipelines.reddit_pipeline import reddit_pipeline
+
+
 default_args = {
     'owner': 'Yen V',
     'start_date': datetime(2024, 10, 22)
@@ -29,5 +32,6 @@ extract = PythonOperator(
         'subreddit': 'dataengineering',
         'time_filter': 'day',
         'limit': 100
-    }
+    },
+    dag=dag
 )
